@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/add/add",
+    "pages/index/index",
+    "pages/set/set"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#333333",
+    "navigationBarTitleText": "一记账",
+    "navigationBarTextStyle":"Black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#2c2c2c",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/add.png",
+        "iconPath": "images/add.png",
+        "pagePath": "pages/index/index",
+        "text":"添加"
+      },
+      {
+        "selectedIconPath": "images/write.png",
+        "iconPath": "images/write.png",
+        "pagePath": "pages/add/add",
+        "text": "添加"
+      },
+      {
+        "selectedIconPath": "images/set-selected.png",
+        "iconPath": "images/set.png",
+        "pagePath": "pages/set/set",
+        "text": "设置"
+      }
+    ]
+  }
+  
+}

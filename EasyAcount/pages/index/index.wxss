@@ -1,0 +1,30 @@
+/* pages/index/index.wxss */
+
+.index-page-container{width: 100%;
+                      height: 100%;
+                      position: fixed;
+                      background: #eeeeee;}
+
+/*底部按钮*/
+.bottom-bar{position:fixed;
+            width: 100%;
+            height: 50px;
+            background: white;
+            border-top: 1px solid #e8e8e8;
+            bottom: 0px;
+            left:0px; 
+            display: flex;
+            }
+
+.bottom-bar-item{width: 33%;
+                 height: 100%;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center
+                }
+.bottom-bar-item-button,.bottom-bar-item-button-icon{width: 30px;
+                                                     height: 30px;
+                                                     }
+
+/*底部按钮结束*/
+

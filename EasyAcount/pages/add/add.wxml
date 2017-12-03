@@ -1,0 +1,34 @@
+<view class="add-page-container">
+
+  <!--类型转换-->
+  <view class='type-switch'>
+    <view class='type-switch-item type-switch-item-active'>
+      <text>支出</text>
+    </view>
+     <view class='type-switch-item'>
+      <text>收入</text>
+    </view>
+  </view>
+
+  <!--Main-->
+  <view class='detial-container'>
+    <view class='detial-item'>
+      <image class='detial-item-icon' src='/images/money.png'></image>
+      <input type='password' placeholder='0.00'></input>
+    </view>
+    <view class='detial-item'>
+      <image class='detial-item-icon' src='/images/date.png'></image>
+      <picker mode="date" start="2013-09-01" end="2027-09-01" value='{{timeValue}}' bindchange='DatePickerValueChanged'>{{timeValue}}</picker>
+    </view>
+    <view class='detial-item'>
+      <image class='detial-item-icon' src='/images/note.png'></image>
+      <input placeholder='浙江树人大学男生致和园' type='text'></input>
+    </view>
+  </view>
+
+  <!--保存按钮-->
+  <view class='button-save'>
+    <text>保存</text>
+  </view>
+
+</view>
