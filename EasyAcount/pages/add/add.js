@@ -71,6 +71,13 @@ Page({
     this.setData({
       timeValue: e.detail.value
     })  
+  },
+
+
+  /*记一笔账单 */
+  AddAnAccount:function()
+  {
+    
   }
 
 })

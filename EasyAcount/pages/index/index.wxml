@@ -1,3 +1,49 @@
 <view class='index-page-container'>
-  <text>666</text>
+  <view class='header'>
+    <view class='header-content'>
+      <view>
+        <text class='budgetary-amount-text'>12月预算余额</text>
+      </view>
+      <view class='budgetary-amount-value'>1500.00</view>
+      <view class='type-container'>
+        <view class='type-item type-item-left'>
+          <text>收入</text>
+          <text>+1800</text>
+        </view>
+        <view class='type-item'>
+          <text>支出</text>
+          <text>-40.00</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='daily-record-container'>
+    <view class='daily-item-container'>
+      <view class='daily-item-date-container'>
+        <text class='daily-item-time'>12月4日</text>
+        <text>今日</text>
+      </view>
+      <view class='daily-item-money-container'>
+        <text>8.00</text>
+      </view>
+    </view>
+    <view class='daily-item-container'>
+      <view class='daily-item-date-container'>
+        <text class='daily-item-time'>12月3日</text>
+        <text>昨日</text>
+      </view>
+      <view class='daily-item-money-container'>
+        <text>15.00</text>
+      </view>
+    </view>
+    <view class='daily-item-container'>
+      <view class='daily-item-date-container'>
+        <text class='daily-item-time'>12月2日</text>
+        <text>周四</text>
+      </view>
+      <view class='daily-item-money-container'>
+        <text>17.00</text>
+      </view>
+    </view>
+  </view>
 </view>

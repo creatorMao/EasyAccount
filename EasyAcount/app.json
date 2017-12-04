@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/add/add",
     "pages/index/index",
+    "pages/add/add",
     "pages/set/set"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#333333",
+    "navigationBarBackgroundColor": "#208ee1",
     "navigationBarTitleText": "一记账",
     "navigationBarTextStyle":"Black"
   },
@@ -19,7 +19,7 @@
         "selectedIconPath": "images/add.png",
         "iconPath": "images/add.png",
         "pagePath": "pages/index/index",
-        "text":"添加"
+        "text":"历史"
       },
       {
         "selectedIconPath": "images/write.png",

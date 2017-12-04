@@ -14,7 +14,7 @@
   <view class='detial-container'>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/money.png'></image>
-      <input type='password' placeholder='0.00'></input>
+      <input type='digit' placeholder='0.00'></input>
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/date.png'></image>
@@ -27,7 +27,7 @@
   </view>
 
   <!--保存按钮-->
-  <view class='button-save'>
+  <view class='button-save' bindtap='AddAnAccount'>
     <text>保存</text>
   </view>
 
