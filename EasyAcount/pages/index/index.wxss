@@ -1,5 +1,7 @@
 /* pages/index/index.wxss */
-
+.index-page-container{position: fixed;
+                      width: 100%;
+                      height: 100%;}
 /*头部*/
 .header{width: 100%;
         background: #208ee1;
@@ -9,7 +11,9 @@
         align-items: center;
         justify-content: center; 
         box-sizing: border-box;
-        padding: 0px 15px 15px 15px;}
+        padding: 0px 15px 15px 15px;
+        height: 30%;
+        }
         
 .type-item{display: flex;
            flex-direction: column;
@@ -49,7 +53,9 @@
 
 
 /*每日统计记录总item*/
-.daily-record-container{width: 100%;}
+.daily-record-container{width: 100%;
+                        height: 70%;
+                        overflow-y: auto;}
 
 .daily-item-container,.daily-item-detial{width:100%;
                       height: 60px;
@@ -59,9 +65,9 @@
                       font-size: 14px;
                       background: #f8f8f8;
                       color: #7f7f7f;
-                      transition: all 0.3s
+                      transition: all 0.3s;
                       }
-.daily-item-container:hover,.daily-item-detial:hover{background:#eeeeee;
+.daily-item-container:hover,.daily-item-detial:hover{background:rgba(248, 248, 248, 0.7);
                             }
 .daily-item-container:before{content: "";
                              width: 14px;
@@ -88,7 +94,10 @@
                 display: flex;
                 flex-direction: column;
                 float: left;
+                justify-content: center;
+                height: 50px;
                 }
+.left-container text{align-items: center}
 
 .left-container>text{margin-bottom:2px;
                      margin-top: 2px;}
@@ -112,6 +121,33 @@
            z-index: 1;}
 .spend-type-text{font-weight: bold;
                  font-size: 15px;}
-.spend-notes-text{font-size: 13px;}
-.cost-text{font-size: 18px;}
+.spend-notes{line-height: 12px;}
+.spend-notes-text{font-size: 12px;
+                  display: block;
+                  margin-top: 4px;
+                  line-height: 12px;
+                  }
+
+.spend-notes-icon{width:12px;
+                  height: 12px;
+                  margin-right: 4px;
+                  margin-top: 4px;
+                  display: block;
+                  float: left;
+                  }
+.money-string,.cost-text{font-size: 18px;}
 /*每日记录详情结束*/
+
+/*无记录*/
+.none-items-container{width: 200px;
+                      margin: 0 auto;
+                      text-align: center;
+                      color: #707070;
+                      margin-top: 100px;
+                      font-size:14px;
+                      display: none;}
+.none-items-icon{width: 48px;
+                 height: 48px;
+                 margin-bottom: 5px;
+                }
+/*无记录结束*/

@@ -1,4 +1,5 @@
 <view class='index-page-container'>
+  <!--首页顶部-->
   <view class='header'>
     <view class='header-content'>
       <view>
@@ -17,25 +18,34 @@
       </view>
     </view>
   </view>
+  <!--首页下部-->
   <view class='daily-record-container'>
+     <!--每日记录-->
      <view>
+      <!--每日记录总统计-->
       <view class='daily-item-container'>
         <view class='left-container'>
           <text>12月4日</text>
           <text>今日</text>
         </view>
         <view class='right-container'>
+          <text>￥</text>
           <text>22.00</text>
         </view>
       </view>
+      <!--每日记录分开统计-->
       <view class='daily-item-detial-container'>
         <view class='daily-item-detial'>
           <image class='type-icon' src='/images/rice.png'></image>
           <view class='left-container'>
             <text class='spend-type-text'>餐饮买菜</text>
-            <text class='spend-notes-text'>晚餐</text>
+            <view class='spend-notes'>
+              <image class='spend-notes-icon' src='/images/write1.png'></image>
+              <text class='spend-notes-text'>晚餐</text>
+            </view>
           </view>
           <view class='right-container'>
+            <text class='money-string'>￥</text>
             <text class='cost-text'>7.00</text>
           </view>
         </view>
@@ -43,23 +53,40 @@
           <image class='type-icon' src='/images/rice.png'></image>
           <view class='left-container'>
             <text class='spend-type-text'>餐饮买菜</text>
-            <text class='spend-notes-text'>午餐</text>
+            <view class='spend-notes'>
+              <image class='spend-notes-icon' src='/images/write1.png'></image>
+              <text class='spend-notes-text'>晚餐</text>
+            </view>
           </view>
           <view class='right-container'>
-            <text class='cost-text'>10.00</text>
+            <text class='money-string'>￥</text>
+            <text class='cost-text'>7.00</text>
           </view>
         </view>
         <view class='daily-item-detial'>
           <image class='type-icon' src='/images/rice.png'></image>
           <view class='left-container'>
             <text class='spend-type-text'>餐饮买菜</text>
-            <text class='spend-notes-text'>早餐</text>
+            <view class='spend-notes'>
+              <image class='spend-notes-icon' src='/images/write1.png'></image>
+              <text class='spend-notes-text'>晚餐</text>
+            </view>
           </view>
           <view class='right-container'>
-            <text class='cost-text'>5.00</text>
+            <text class='money-string'>￥</text>
+            <text class='cost-text'>7.00</text>
           </view>
         </view>
       </view>
-    </view>
+     </view>
+     <!--没有记录-->
+     <view class='none-items-container'>
+        <view>
+          <image class='none-items-icon' src='/images/nothing.png'></image>
+        </view>
+        <view>
+          <text>还没有记录哦！</text>
+        </view>
+     </view>
   </view>
 </view>
