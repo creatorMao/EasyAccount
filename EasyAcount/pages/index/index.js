@@ -15,8 +15,7 @@ Page({
 
     //当前日期
     currentMonth:'12',
-    curentDate:'2017-12'
-
+    curentDate:'2017-12',
   },
 
   /**
@@ -122,8 +121,7 @@ Page({
     this.setData({
       curentDate:e.detail.value,
     });
-  }
-
+  },
 
 
 })

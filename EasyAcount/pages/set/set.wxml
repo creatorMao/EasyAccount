@@ -1,3 +1,42 @@
 <view class="set-page-container">
-  <text>设置页面</text>
+  <view class='user-pic-container'>
+    <image src='/images/userpic.jpg' class='user-pic'></image>
+    <text class='user-name'>5只猫</text>
+  </view>
+  <view class='set-item'>
+    <text>每月预算</text>
+    <view>
+      <text>1500</text>
+    </view>
+  </view>
+  <view class='set-item'>
+    <text>更新记录</text>
+    <view>
+      <text>></text>
+    </view>
+  </view>
+  <view class='set-item'>
+    <text>意见反馈</text>
+    <view>
+      <text></text>
+    </view>
+  </view>
+  <view class='set-item'>
+    <text>推荐给好友</text>
+    <view>
+      <text></text>
+    </view>
+  </view>
+  <view class='set-item'>
+    <text>捐助我</text>
+    <view>
+      <text></text>
+    </view>
+  </view>
+  <view class='set-item'>
+    <text>版本号</text>
+    <view>
+      <text>1.00</text>
+    </view>
+  </view>
 </view>

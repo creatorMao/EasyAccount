@@ -13,19 +13,19 @@
       </view>
       <view class='type-container'>
         <view class='type-item type-item-left'>
-          <text>收入</text>
-          <text>{{isEyeClose?'***':currentMonthIncome}}</text>
+            <text>支出</text>
+            <text>{{isEyeClose?'***':currentMonthAllCost}}</text>
         </view>
         <view class='type-item'>
-          <text>支出</text>
-          <text>{{isEyeClose?'***':currentMonthAllCost}}</text>
+          <text>收入</text>
+          <text>{{isEyeClose?'***':currentMonthIncome}}</text>
         </view>
       </view>
     </view>
   </view>
   <!--首页下部-->
   <view class='daily-record-container'>
-     <!--每日记录-->
+     <!--支出每日记录-->
      <view>
       <!--每日记录总统计-->
       <view class='daily-item-container'>

@@ -12,10 +12,10 @@
         justify-content: center; 
         box-sizing: border-box;
         padding: 0px 15px 15px 15px;
-        height: 30%;
+        height: 35%;
         font-size: 16px;
         color: white;
-        }
+        }              
 .budget-container{display: flex;
                   flex-direction: row;
                   align-items: center;
@@ -41,6 +41,7 @@
            align-items: center;
            text-align: center;
            margin: 0 10px;
+           color: rgba(255, 255, 255, 1)
            }
 
 .type-container{display: flex;
@@ -62,7 +63,7 @@
 .budgetary-amount-text{color: white;
                        font-size: 16px;
                        }
-.budgetary-amount-value{margin-top: 10px;
+.budgetary-amount-value{margin-top: 5px;
                         color: white;
                         font-size: 30px;
                         }
@@ -72,8 +73,9 @@
 
 /*每日统计记录总item*/
 .daily-record-container{width: 100%;
-                        height: 70%;
-                        overflow-y: auto;}
+                        height: 65%;
+                        overflow-y: auto;
+                        }
 
 .daily-item-container,.daily-item-detial{width:100%;
                       height: 60px;
@@ -139,7 +141,8 @@
            z-index: 1;}
 .spend-type-text{font-weight: bold;
                  font-size: 15px;}
-.spend-notes{line-height: 12px;}
+.spend-notes{line-height: 12px;
+             display: flex;}
 .spend-notes-text{font-size: 12px;
                   display: block;
                   margin-top: 4px;
@@ -151,7 +154,6 @@
                   margin-right: 4px;
                   margin-top: 4px;
                   display: block;
-                  float: left;
                   }
 .money-string,.cost-text{font-size: 18px;}
 /*每日记录详情结束*/
