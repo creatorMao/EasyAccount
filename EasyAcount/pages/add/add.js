@@ -77,7 +77,6 @@ Page({
   /*记一笔账单 */
   AddAnAccount:function()
   {
-    
   }
 
 })

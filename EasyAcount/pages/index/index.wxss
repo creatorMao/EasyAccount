@@ -13,24 +13,43 @@
         box-sizing: border-box;
         padding: 0px 15px 15px 15px;
         height: 30%;
+        font-size: 16px;
+        color: white;
         }
-        
+.budget-container{display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: center;
+                  } 
+                                        
+.eye-show{width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          display: inline-block;
+          }
+.current-date-container{font-size: 14px;
+                        margin-top: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;}
+.down-drop{width: 20px;
+           height: 20px;
+           }
 .type-item{display: flex;
            flex-direction: column;
            justify-content: center;
            align-items: center;
            text-align: center;
-           margin: 0 10px;}
+           margin: 0 10px;
+           }
 
 .type-container{display: flex;
                 flex-direction: row;
                 justify-content: center;
                 font-size: 15px;
-                color: white;
                 margin-top: 10px;
                 position: relative;
                 }
-
 
 .type-item-left:after{content: "";
                       width: 1px;
@@ -38,7 +57,6 @@
                       background: white;
                       position: absolute;
                       left: 50%;
-                      margin-left: 2px;
                       top: 2px;}
 
 .budgetary-amount-text{color: white;

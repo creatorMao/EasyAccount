@@ -16,14 +16,14 @@
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "images/add.png",
-        "iconPath": "images/add.png",
+        "selectedIconPath": "images/index.png",
+        "iconPath": "images/index.png",
         "pagePath": "pages/index/index",
-        "text":"历史"
+        "text":"本月"
       },
       {
-        "selectedIconPath": "images/write.png",
-        "iconPath": "images/write.png",
+        "selectedIconPath": "images/add.png",
+        "iconPath": "images/add.png",
         "pagePath": "pages/add/add",
         "text": "添加"
       },

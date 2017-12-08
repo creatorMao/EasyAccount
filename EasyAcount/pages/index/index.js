@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    isEyeClose:false,
+    eyeIconSrc:'/images/eye-show.png',
+    
+    //每月预算，总支出，总收入
+    monthlyBudget:'1500.00',
+    currentMonthAllCost:'0.00',
+    currentMonthIncome:'0.00',
+
+    //当前日期
+    currentMonth:'12',
+    curentDate:'2017-12'
+
   },
 
   /**
@@ -80,6 +91,39 @@ Page({
       url: '/pages/set/set',
     })
     wx.ania
+  },
+
+  //改变眼睛图片
+  SetEyeState:function()
+  {
+    this.setData({
+      isEyeClose: !this.data.isEyeClose,
+    }); 
+
+    if (this.data.isEyeClose) 
+    {
+      //console.log(this.data.isEyeClose);
+      this.setData({
+        eyeIconSrc: '/images/eye-hide.png'
+      }); 
+    }
+    else
+    {
+      //console.log(this.data.isEyeClose);
+      this.setData({
+        eyeIconSrc: '/images/eye-show.png'
+      }); 
+    }
+
+  },
+
+  //选择时间
+  SelectDate:function(e){
+    this.setData({
+      curentDate:e.detail.value,
+    });
   }
+
+
 
 })
