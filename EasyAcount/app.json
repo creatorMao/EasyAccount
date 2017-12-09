@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/add/add",
     "pages/index/index",
     "pages/updateHistory/updateHistory",
-    "pages/set/set",
-    "pages/add/add"
+    "pages/set/set"
   ],
   "window": {
     "backgroundTextStyle": "light",

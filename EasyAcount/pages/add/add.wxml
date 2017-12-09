@@ -1,19 +1,49 @@
 <view class="add-page-container">
 
   <!--类型转换-->
-  <view class='type-switch'>
-    <view class='type-switch-item type-switch-item-active'>
-      <text>支出</text>
-    </view>
-     <view class='type-switch-item'>
-      <text>收入</text>
+  <view class='header'>
+      <view class='type-switch'>
+      <view class="type-switch-mask {{isClick?'type-switch-mask-active':''}}">
+      </view>
+      <view class='type-item-container'>
+        <view class="type-switch-item {{isClick?'':'type-switch-item-active'}}" bindtap='ClickSwitch'>
+          <text>支出</text>
+        </view>
+        <view class="type-switch-item {{isClick?'type-switch-item-active':''}}" bindtap='ClickSwitch'>
+          <text>收入</text>
+        </view>
+      </view>
     </view>
   </view>
 
   <!--Main-->
+  <view class='main'>
+  <view class='icon-cntainer'>
+      <view class="icon {{isClick?'icon-active':''}}">
+         <view class='cost-icon-container'>
+            <view class='cost-icon-item' wx:for="{{costIconList}}">
+              <image class='cost-icon' src='{{item.url}}'> </image>
+              <text>{{item.name}}</text>
+            </view>
+         </view>
+         <view class='income-icon-container'>
+            <view class='income-icon-item' wx:for="{{incomeIconList}}">
+              <image class='income-icon' src='{{item.url}}'> </image>
+              <text>{{item.name}}</text>
+            </view>
+         </view>
+      </view>
+      <view class='dot-container'>
+        <view class="dot {{isClick?'':'dot-active'}}"></view>
+        <view class="dot {{isClick?'dot-active':''}}"></view>
+      </view>
+  </view>
   <view class='detial-container'>
-    <view class='detial-item'>
-      <image class='detial-item-icon' src='/images/money.png'></image>
+    <view class='detial-item detail-first-item'>
+      <view>
+        <image class='detial-item-icon' src='/images/money.png'></image>
+        <text>餐饮</text>
+      </view>
       <input type='digit' placeholder='0.00'></input>
     </view>
     <view class='detial-item'>
@@ -22,8 +52,20 @@
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/note.png'></image>
-      <input placeholder='浙江树人大学男生致和园' type='text'></input>
+      <input placeholder='备注' type='text'></input>
     </view>
+     <view class='detial-item'>
+      <image class='detial-item-icon' src='/images/locate.png'></image>
+      <input placeholder='地址' type='text'></input>
+    </view>
+    
+  </view>
+
+  <block wx:for="{{resultValue}}">
+    <text>{{item.Id}}</text>
+    <text>{{item.Name}}</text>
+    <text>{{item.Category}}</text>
+  </block >
   </view>
 
   <!--保存按钮-->

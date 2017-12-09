@@ -6,7 +6,28 @@ Page({
    */
   data: {
     timeValue:"2017-2-3",
+    resultValue:[],
+    isClick:false,
+    costIconList:[{url:'/images/cost/drink.png',name:'饮料'},
+                  { url: '/images/cost/rice.png', name:'三餐' },
+                  { url: '/images/cost/car.png', name: '出行' },
+                  { url: '/images/cost/study.png', name: '学习' },
+                  { url: '/images/cost/phone.png', name: '通讯' },
+                  { url: '/images/cost/smoke.png', name: '烟酒' },
+                  { url: '/images/cost/hospital.png', name: '医疗' },
+                  { url: '/images/cost/huabei.png', name: '还款' },
+                  { url: '/images/cost/travel.png', name: '旅行' },
+                  { url: '/images/cost/skincare.png', name: '护肤' },
+                  { url: '/images/cost/rent.png', name: '房租' },
   
+                  
+                  ],
+    incomeIconList: [{ url: '/images/income/livingexpenses.png', name: '生活费' },
+                     { url: '/images/income/redenvelopes.png', name: '红包' },
+                     { url: '/images/income/wages.png', name: '工资' },
+                     { url: '/images/income/parttimejob.png', name: '兼职' },
+                     { url: '/images/income/other.png', name: '其它' },
+                    ]
   },
 
   /**
@@ -77,6 +98,26 @@ Page({
   /*记一笔账单 */
   AddAnAccount:function()
   {
+    var self=this;
+    wx.request({
+      url: 'https://www.creatordream.cn/api/products/all',
+      method:'GET',
+      dataType:'json',
+      responseType:'text',
+      success:function(res){
+        self.setData({
+          resultValue:res.data,
+        });
+        console.log(self.data.resultValue);
+      }
+    })
+  },
+
+  //点击转换
+  ClickSwitch:function(){
+    this.setData({
+      isClick: !this.data.isClick,
+    });
   }
 
 })
