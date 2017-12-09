@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    timeValue:'2009-1-1'
+    //每月预算
+    monthlyBudget: '1500.00',
   }
 })

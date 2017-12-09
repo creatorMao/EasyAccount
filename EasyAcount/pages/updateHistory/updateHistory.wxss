@@ -1,0 +1,5 @@
+/* pages/updateHistory/updateHistory.wxss */
+.update-history-container{padding: 10px 10px;
+                          font-size: 14px;
+                          }
+.version-number{font-size: 16px;}

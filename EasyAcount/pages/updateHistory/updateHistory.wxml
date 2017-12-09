@@ -1,0 +1,7 @@
+<!--pages/updateHistory/updateHistory.wxml-->
+<view class='update-history-container'>
+  <view class='version-number'>1.00</view>
+    <text>
+        1.开发中.....
+    </text>
+</view>

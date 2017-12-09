@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/add/add",
-    "pages/set/set"
+    "pages/updateHistory/updateHistory",
+    "pages/set/set",
+    "pages/add/add"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#208ee1",
     "navigationBarTitleText": "一记账",
-    "navigationBarTextStyle":"Black"
+    "navigationBarTextStyle": "Black"
   },
   "tabBar": {
     "color": "#515151",
@@ -19,7 +20,7 @@
         "selectedIconPath": "images/index.png",
         "iconPath": "images/index.png",
         "pagePath": "pages/index/index",
-        "text":"本月"
+        "text": "本月"
       },
       {
         "selectedIconPath": "images/add.png",
@@ -35,5 +36,4 @@
       }
     ]
   }
-  
 }

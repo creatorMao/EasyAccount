@@ -6,7 +6,7 @@
           <text class='budgetary-amount-text'>当前月预算余额</text>
           <image src='{{eyeIconSrc}}' class='eye-show' mode='scaleToFill'bindtap='SetEyeState'></image>
       </view>
-      <view class='budgetary-amount-value'>{{isEyeClose?'******':monthlyBudget}}</view>
+      <view class='budgetary-amount-value'>{{isEyeClose?'******':budget}}</view>
       <view class='current-date-container'>
         <picker mode="date" start="2013-09-01" end="2027-09-01" value='{{curentDate}}'  bindchange='SelectDate' fields='month'>{{curentDate}}</picker>
         <image src='/images/down.png' class='down-drop'></image>

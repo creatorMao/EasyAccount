@@ -1,4 +1,6 @@
 // pages/index/index.js
+
+
 Page({
 
   /**
@@ -9,11 +11,11 @@ Page({
     eyeIconSrc:'/images/eye-show.png',
     
     //每月预算，总支出，总收入
-    monthlyBudget:'1500.00',
     currentMonthAllCost:'0.00',
     currentMonthIncome:'0.00',
 
     //当前日期
+    budget:'',
     currentMonth:'12',
     curentDate:'2017-12',
   },
@@ -22,7 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -36,7 +38,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
+    this.setData({
+      budget: getApp().globalData.monthlyBudget,
+    })
+    
   },
 
   /**
