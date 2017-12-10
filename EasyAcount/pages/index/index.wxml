@@ -40,46 +40,18 @@
       </view>
       <!--每日记录分开统计-->
       <view class='daily-item-detial-container'>
-        <view class='daily-item-detial'>
+        <view class='daily-item-detial' wx:for="{{resultValue}}">
           <image class='type-icon' src='/images/rice.png'></image>
           <view class='left-container'>
-            <text class='spend-type-text'>餐饮买菜</text>
+            <text class='spend-type-text'>{{item.SpecificWay}}</text>
             <view class='spend-notes'>
               <image class='spend-notes-icon' src='/images/write1.png'></image>
-              <text class='spend-notes-text'>晚餐</text>
+              <text class='spend-notes-text'>{{item.Notes}}</text>
             </view>
           </view>
-          <view class='right-container'>
+          <view class="right-container {{item.way=='收入'?'right-container-income':''}}">
             <text class='money-string'>￥</text>
-            <text class='cost-text'>7.00</text>
-          </view>
-        </view>
-        <view class='daily-item-detial'>
-          <image class='type-icon' src='/images/rice.png'></image>
-          <view class='left-container'>
-            <text class='spend-type-text'>餐饮买菜</text>
-            <view class='spend-notes'>
-              <image class='spend-notes-icon' src='/images/write1.png'></image>
-              <text class='spend-notes-text'>晚餐</text>
-            </view>
-          </view>
-          <view class='right-container'>
-            <text class='money-string'>￥</text>
-            <text class='cost-text'>7.00</text>
-          </view>
-        </view>
-        <view class='daily-item-detial'>
-          <image class='type-icon' src='/images/rice.png'></image>
-          <view class='left-container'>
-            <text class='spend-type-text'>餐饮买菜</text>
-            <view class='spend-notes'>
-              <image class='spend-notes-icon' src='/images/write1.png'></image>
-              <text class='spend-notes-text'>晚餐</text>
-            </view>
-          </view>
-          <view class='right-container'>
-            <text class='money-string'>￥</text>
-            <text class='cost-text'>7.00</text>
+            <text class='money-text'>{{item.Money}}</text>
           </view>
         </view>
       </view>

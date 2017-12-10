@@ -5,10 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    timeValue:"2017-2-3",
+    timeValue:'',
     resultValue:[],
     isClick:false,
-    costIconList:[{url:'/images/cost/drink.png',name:'饮料'},
+    selectedWay:'',
+    costIconList:[{ url: '/images/cost/drink.png',name:'饮料'},
                   { url: '/images/cost/rice.png', name:'三餐' },
                   { url: '/images/cost/car.png', name: '出行' },
                   { url: '/images/cost/study.png', name: '学习' },
@@ -34,7 +35,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var date=new Date();
+    var day = date.getDate();
+    var month=date.getMonth()+1;
+    var year=date.getFullYear();
+    this.setData({
+      timeValue: year.toString()+'-'+month.toString()+'-'+day.toString(),
+    });
+    console.log(this.data.timeValue);
   },
 
   /**
@@ -117,6 +125,24 @@ Page({
   ClickSwitch:function(){
     this.setData({
       isClick: !this.data.isClick,
+    });
+  },
+
+  //选择一种方式
+  ChooseAWay:function(event){
+    //console.log(event);
+    //console.log(event.currentTarget.dataset.index);
+    var  index= event.currentTarget.dataset.index;
+    if (this.data.isClick==false)
+    {
+      var wayText = this.data.costIconList[index].name;
+    }
+    else
+    {
+      var wayText = this.data.incomeIconList[index].name;
+    }
+    this.setData({
+      selectedWay:wayText,
     });
   }
 

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/add/add",
     "pages/index/index",
+    "pages/add/add",
     "pages/updateHistory/updateHistory",
     "pages/set/set"
   ],

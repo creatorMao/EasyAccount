@@ -21,13 +21,13 @@
   <view class='icon-cntainer'>
       <view class="icon {{isClick?'icon-active':''}}">
          <view class='cost-icon-container'>
-            <view class='cost-icon-item' wx:for="{{costIconList}}">
+            <view class='cost-icon-item' wx:for="{{costIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
               <image class='cost-icon' src='{{item.url}}'> </image>
               <text>{{item.name}}</text>
             </view>
          </view>
          <view class='income-icon-container'>
-            <view class='income-icon-item' wx:for="{{incomeIconList}}">
+            <view class='income-icon-item' wx:for="{{incomeIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
               <image class='income-icon' src='{{item.url}}'> </image>
               <text>{{item.name}}</text>
             </view>
@@ -42,13 +42,13 @@
     <view class='detial-item detail-first-item'>
       <view>
         <image class='detial-item-icon' src='/images/money.png'></image>
-        <text>餐饮</text>
+        <text>{{selectedWay==''?'类别':selectedWay}}</text>
       </view>
       <input type='digit' placeholder='0.00'></input>
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/date.png'></image>
-      <picker mode="date" start="2013-09-01" end="2027-09-01" value='{{timeValue}}' bindchange='DatePickerValueChanged'>{{timeValue}}</picker>
+      <picker mode="date" start="2016-09-01" end="2027-09-01" value='{{timeValue}}' bindchange='DatePickerValueChanged'>{{timeValue}}</picker>
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/note.png'></image>
@@ -60,12 +60,6 @@
     </view>
     
   </view>
-
-  <block wx:for="{{resultValue}}">
-    <text>{{item.Id}}</text>
-    <text>{{item.Name}}</text>
-    <text>{{item.Category}}</text>
-  </block >
   </view>
 
   <!--保存按钮-->

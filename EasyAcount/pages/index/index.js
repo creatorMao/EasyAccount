@@ -18,13 +18,27 @@ Page({
     budget:'',
     currentMonth:'12',
     curentDate:'2017-12',
+
+    resultValue:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var self = this;
+    wx.request({
+      url: 'https://www.creatordream.cn/api/records/all',
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        self.setData({
+          resultValue: res.data,
+        });
+        console.log(self.data.resultValue);
+      }
+    })
   },
 
   /**

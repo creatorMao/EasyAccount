@@ -127,6 +127,7 @@
                  line-height: 50px;
                  color: #ff5353;
                             }
+.right-container-income{color: #40c1aa;}
 /*每日统计记录item结束*/
 
 
@@ -155,7 +156,7 @@
                   margin-top: 4px;
                   display: block;
                   }
-.money-string,.cost-text{font-size: 18px;}
+.money-string,.money-text{font-size: 18px;}
 /*每日记录详情结束*/
 
 /*无记录*/

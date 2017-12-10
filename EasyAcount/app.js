@@ -10,6 +10,11 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res.code);
+        console.log(res.errMsg);
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+        })
       }
     })
     // 获取用户信息
