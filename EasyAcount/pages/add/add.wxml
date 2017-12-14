@@ -19,15 +19,15 @@
   <!--Main-->
   <view class='main'>
   <view class='icon-cntainer'>
-      <view class="icon {{isClick?'icon-active':''}}">
+      <view class="icon {{isClick?'icon-active':''}}" bindtouchstart='TouchStart' bindtouchmove='TouchMove' bindtouchend='TouchEnd'>
          <view class='cost-icon-container'>
-            <view class='cost-icon-item' wx:for="{{costIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
+            <view class="cost-icon-item {{num==index?'icon-item-active':''}}" wx:for="{{costIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
               <image class='cost-icon' src='{{item.url}}'> </image>
               <text>{{item.name}}</text>
             </view>
          </view>
          <view class='income-icon-container'>
-            <view class='income-icon-item' wx:for="{{incomeIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
+            <view class="income-icon-item {{num==index?'icon-item-active':''}}" wx:for="{{incomeIconList}}" bindtap='ChooseAWay' data-index='{{index}}'>
               <image class='income-icon' src='{{item.url}}'> </image>
               <text>{{item.name}}</text>
             </view>
@@ -44,7 +44,10 @@
         <image class='detial-item-icon' src='/images/money.png'></image>
         <text>{{selectedWay==''?'类别':selectedWay}}</text>
       </view>
-      <input type='digit' placeholder='0.00'></input>
+      <view>
+      </view>
+      <text>￥</text>
+      <input type='digit' placeholder='0.00' bindinput='MoneyInput' value='{{money}}' confirm-type='done'></input>
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/date.png'></image>
@@ -52,11 +55,7 @@
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/note.png'></image>
-      <input placeholder='备注' type='text'></input>
-    </view>
-     <view class='detial-item'>
-      <image class='detial-item-icon' src='/images/locate.png'></image>
-      <input placeholder='地址' type='text'></input>
+      <input placeholder='备注' type='text' bindinput='NotesInput'></input>
     </view>
     
   </view>

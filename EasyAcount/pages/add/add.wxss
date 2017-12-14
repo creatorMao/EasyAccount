@@ -99,16 +99,17 @@
              color: #666666;
              font-size: 16px;}
 .detial-item text{line-height: 40px;}
-.detail-first-item{display: flex;
-                   justify-content: space-between}
-.detail-first-item input{text-align: right;
-                         max-width: 50%;}
-.detail-first-item view text{margin-left: 15px;}
+.detail-first-item{display: flex;}
+.detail-first-item text{margin-left: 10px;}
 .detail-first-item view{display: flex;
                         justify-content: center;
                         align-items: center;}
 .detial-item picker,.detial-item input{margin-left: 15px;
-                                       color: #666666}           
+                                       color: #666666;
+                                       width: 85%;}           
+.detail-first-item input{text-align: left;
+                         margin-left: 0px;
+                         width: 50%;}
 
 .detial-item-icon{width:24px;
                   height:24px;
@@ -118,15 +119,16 @@
 /*保存按钮*/
 .button-save{width: 90%;
              position: fixed;
-             bottom: 2px;
+             bottom: 5px;
              left: 0;
              height: 50px;
-             background: rgba(232, 232, 232, 0.8);
+             background: rgba(232, 232, 232, 0.9);
              text-align: center;
              line-height: 50px;
              margin-left: 5%;
              margin-bottom: 8px;}
-.button-save:hover{background: rgba(232,232,232,1)}
+.button-save:hover{background: rgba(232,232,232,1)
+                   }
 
 
 
@@ -145,7 +147,7 @@
                 width: 20%;
                 text-align: center;
                 position: relative;}
-.cost-icon-item:after,.income-icon-item:after{content:"";
+.cost-icon-item::after,.income-icon-item::after{content:"";
                       width: 52px;
                       height: 52px;
                       border-radius: 100%;
@@ -156,7 +158,7 @@
                       opacity: 0;
                       transition: all 0.3s;
                       }
-.cost-icon-item:hover:after,.income-icon-item:hover:after{opacity: 1}
+.icon-item-active::after{opacity: 1}
 .cost-icon,.income-icon{width: 30px;
            height: 30px;
            }

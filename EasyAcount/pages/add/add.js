@@ -1,4 +1,7 @@
 // pages/add/add.js
+
+var startPot = 0;
+
 Page({
 
   /**
@@ -6,9 +9,11 @@ Page({
    */
   data: {
     timeValue:'',
-    resultValue:[],
     isClick:false,
     selectedWay:'',
+    notes:'none',
+    money:'',
+    num:null,
     costIconList:[{ url: '/images/cost/drink.png',name:'饮料'},
                   { url: '/images/cost/rice.png', name:'三餐' },
                   { url: '/images/cost/car.png', name: '出行' },
@@ -28,21 +33,27 @@ Page({
                      { url: '/images/income/wages.png', name: '工资' },
                      { url: '/images/income/parttimejob.png', name: '兼职' },
                      { url: '/images/income/other.png', name: '其它' },
-                    ]
+                    ],   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    var self=this;
+
     var date=new Date();
     var day = date.getDate();
     var month=date.getMonth()+1;
     var year=date.getFullYear();
-    this.setData({
-      timeValue: year.toString()+'-'+month.toString()+'-'+day.toString(),
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    self.setData({
+      timeValue: year.toString() + '-' + month.toString() + '-' + day.toString() + ' ' + hour + ':' + minute
     });
-    console.log(this.data.timeValue);
+    //console.log(this.data.timeValue);
+
   },
 
   /**
@@ -97,9 +108,14 @@ Page({
 
   /*选择时间 */
   DatePickerValueChanged:function(e){
+    var date = new Date();
+    var hour=date.getHours();
+    var minute=date.getMinutes();
+    var second=date.getSeconds();
     this.setData({
-      timeValue: e.detail.value
-    })  
+      timeValue: e.detail.value+' '+hour+':'+minute
+    });
+    console.log(this.data.timeValue);
   },
 
 
@@ -107,25 +123,66 @@ Page({
   AddAnAccount:function()
   {
     var self=this;
-    wx.request({
-      url: 'https://www.creatordream.cn/api/products/all',
-      method:'GET',
-      dataType:'json',
-      responseType:'text',
-      success:function(res){
-        self.setData({
-          resultValue:res.data,
-        });
-        console.log(self.data.resultValue);
-      }
-    })
+
+    var userid=1;
+    if(this.data.isClick==false)
+    {
+      var way='支出';
+    }
+    else
+    {
+      var way = '收入';
+    }
+
+    //判断用户有没有
+    if (this.data.selectedWay=='')
+    {
+        wx.showToast({
+          title: '请选择一个类别',
+          image:'/images/tips.png'
+        })
+    }
+    else if (this.data.money=='')
+    {
+        wx.showToast({
+          title: '请输入金额',
+          image:'/images/tips.png'
+        })
+    }
+    else
+    {
+      var url = 'https://www.creatordream.cn/api/Records/add/' + userid + '?way=' + way + '&specificWay=' + this.data.selectedWay + '&money=' + this.data.money + '&datetime=' + this.data.timeValue + '&notes=' + this.data.notes;
+      //console.log(url);
+      wx.request({
+        url: url,
+        method: 'Post',
+        success: function (res) {
+          //console.log(res.statusCode);
+          if (res.statusCode!='500')
+          {
+              wx.showToast({
+                title: '添加成功',
+              });
+              self.setData({
+                selectedWay: '',
+                money: '',
+                num:null
+              });
+          }
+        }
+      })
+    }
   },
 
   //点击转换
   ClickSwitch:function(){
     this.setData({
       isClick: !this.data.isClick,
+      //当选择 支出或者输入时，清空一下选择
+      selectedWay:'',
+      num:null,
     });
+    
   },
 
   //选择一种方式
@@ -136,14 +193,73 @@ Page({
     if (this.data.isClick==false)
     {
       var wayText = this.data.costIconList[index].name;
+      this.setData({
+        num:index,
+      })
     }
     else
     {
       var wayText = this.data.incomeIconList[index].name;
+      this.setData({
+        num: index,
+      })
     }
     this.setData({
       selectedWay:wayText,
     });
+  },
+
+
+  //绑定备注输入
+  NotesInput:function(e){
+    this.setData({
+      notes:e.detail.value,
+    });
+    //console.log(this.data.notes);
+  },
+
+  //绑定money input
+  MoneyInput:function(e){
+    this.setData({
+      money:e.detail.value,
+    });
+  },
+
+  
+
+  TouchStart:function(e){
+      startPot=e.touches[0].pageX;
+  },
+
+  TouchMove:function(e)
+  {
+      var touchMove=e.touches[0].pageX;
+      if (touchMove - startPot >= 35 )
+      {
+        this.setData({
+          isClick: false,
+          //当选择 支出或者输入时，清空一下选择
+          selectedWay: '',
+          num: null,
+        });
+      }
+      else if (touchMove - startPot <= -35 ) {
+        this.setData({
+          isClick: true,
+          //当选择 支出或者输入时，清空一下选择
+          selectedWay: '',
+          num: null,
+        });
+      }
+      
+  },
+
+
+  TouchEnd:function(e){
+
   }
 
+
+  
 })
+

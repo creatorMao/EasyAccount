@@ -23,10 +23,13 @@
       </view>
     </view>
   </view>
+  <view class="refresh-container {{isRefresh?'':'refresh-container-show'}}"> 
+    {{refreshText}}
+  </view>
   <!--首页下部-->
-  <view class='daily-record-container'>
+  <scroll-view class='daily-record-container' scroll-y="true" bindscroll="BindScroll">
      <!--支出每日记录-->
-     <view>
+     <view bindtouchstart='TouchStart' bindtouchmove='TouchMove' bindtouchend='TouchEnd'>
       <!--每日记录总统计-->
       <view class='daily-item-container'>
         <view class='left-container'>
@@ -65,5 +68,5 @@
           <text>还没有记录哦！</text>
         </view>
      </view>
-  </view>
+  </scroll-view> >
 </view>
