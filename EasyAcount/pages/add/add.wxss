@@ -100,16 +100,17 @@
              font-size: 16px;}
 .detial-item text{line-height: 40px;}
 .detail-first-item{display: flex;}
-.detail-first-item text{margin-left: 10px;}
+.detail-first-item text{margin-left: 15px;}
 .detail-first-item view{display: flex;
                         justify-content: center;
                         align-items: center;}
 .detial-item picker,.detial-item input{margin-left: 15px;
                                        color: #666666;
-                                       width: 85%;}           
+                                       }    
+.notes{width:85%;}      
 .detail-first-item input{text-align: left;
                          margin-left: 0px;
-                         width: 50%;}
+                         width: 60%;}
 
 .detial-item-icon{width:24px;
                   height:24px;

@@ -51,11 +51,12 @@
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/date.png'></image>
-      <picker mode="date" start="2016-09-01" end="2027-09-01" value='{{timeValue}}' bindchange='DatePickerValueChanged'>{{timeValue}}</picker>
+      <picker mode="date" start="2016-09-01" end="2027-09-01" value='{{date}}' bindchange='DatePickerValueChanged'>{{date}}</picker>
+      <picker mode="time" start="00:00" end="24:00" value='{{time}}' bindchange='TimePickerValueChanged'>{{time}}</picker>
     </view>
     <view class='detial-item'>
       <image class='detial-item-icon' src='/images/note.png'></image>
-      <input placeholder='备注' type='text' bindinput='NotesInput'></input>
+      <input placeholder="备注" type='text' bindinput='NotesInput' class='notes' value="{{notes==''?'备注':note}}" bindinput='BindNotesInput'></input>
     </view>
     
   </view>

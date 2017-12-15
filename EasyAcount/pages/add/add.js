@@ -8,10 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    timeValue:'',
+    date:'',
+    time:'',
     isClick:false,
     selectedWay:'',
-    notes:'none',
+    notes:'备注',
     money:'',
     num:null,
     costIconList:[{ url: '/images/cost/drink.png',name:'饮料'},
@@ -50,8 +51,9 @@ Page({
     var hour = date.getHours();
     var minute = date.getMinutes();
     self.setData({
-      timeValue: year.toString() + '-' + month.toString() + '-' + day.toString() + ' ' + hour + ':' + minute
-    });
+      date: year.toString() + '-' + month.toString() + '-' + day.toString(),
+      time: hour + ':' + minute
+      });
     //console.log(this.data.timeValue);
 
   },
@@ -106,16 +108,27 @@ Page({
   },
 
 
-  /*选择时间 */
+  /*选择日期 */
   DatePickerValueChanged:function(e){
-    var date = new Date();
-    var hour=date.getHours();
-    var minute=date.getMinutes();
-    var second=date.getSeconds();
     this.setData({
-      timeValue: e.detail.value+' '+hour+':'+minute
+      date: e.detail.value,
     });
-    console.log(this.data.timeValue);
+    //console.log(this.data.timeValue);
+  },
+
+  /*选择时间 */
+  TimePickerValueChanged:function(e){
+    this.setData({
+      time:e.detail.value,
+    });
+    //console.log(this.data.time);
+  },
+
+
+  BindNotesInput:function(e){
+      this.setData({
+        notes:e.value,
+      });
   },
 
 
@@ -151,7 +164,7 @@ Page({
     }
     else
     {
-      var url = 'https://www.creatordream.cn/api/Records/add/' + userid + '?way=' + way + '&specificWay=' + this.data.selectedWay + '&money=' + this.data.money + '&datetime=' + this.data.timeValue + '&notes=' + this.data.notes;
+      var url = 'https://www.creatordream.cn/api/Records/add/' + userid + '?way=' + way + '&specificWay=' + this.data.selectedWay + '&money=' + this.data.money + '&datetime=' + this.data.date+' '+this.data.time + '&notes=' + this.data.notes;
       //console.log(url);
       wx.request({
         url: url,
@@ -166,7 +179,8 @@ Page({
               self.setData({
                 selectedWay: '',
                 money: '',
-                num:null
+                num:null,
+                notes:'',
               });
           }
         }
