@@ -164,7 +164,7 @@ Page({
     }
     else
     {
-      var url = 'https://www.creatordream.cn/api/Records/add/' + userid + '?way=' + way + '&specificWay=' + this.data.selectedWay + '&money=' + this.data.money + '&datetime=' + this.data.date+' '+this.data.time + '&notes=' + this.data.notes;
+      var url = '' + userid + '?way=' + way + '&specificWay=' + this.data.selectedWay + '&money=' + this.data.money + '&datetime=' + this.data.date+' '+this.data.time + '&notes=' + this.data.notes;
       //console.log(url);
       wx.request({
         url: url,
