@@ -46,7 +46,7 @@ Page({
 
     
     wx.request({
-      url: 'https://www.creatordream.cn/Api/records/all',
+      url: '',
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
@@ -204,7 +204,7 @@ Page({
     var self=this;
 
     wx.request({
-      url: 'https://www.creatordream.cn/Api/records/all',
+      url: '',
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
